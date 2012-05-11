@@ -23,5 +23,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'pry'
   
   # Specify any dependencies here; for example:
-  # s.add_runtime_dependency 'rest-client'
+  s.add_runtime_dependency 'Split_Lines'
 end
