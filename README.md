@@ -4,18 +4,18 @@ Backtrace\_Array
 
 A Ruby gem to alter structure of a backtrace:
 
-   Original Backtrace:
+    Original Backtrace:
 
-   [ String, String, String ]
+    [ String, String, String ]
 
-   New Array:
+    New Array:
 
-   [
-     [ unique file 1, [ [line, code], [line, code], ... ] ]
-     [ unique file 2, [ [line, code], [line, code], ... ] ]
-     [ unique file 3, [ [line, code], [line, code], ... ] ]
-    
-   ]
+    [
+       [ unique file 1, [ [line, code], [line, code], ... ] ]
+       [ unique file 2, [ [line, code], [line, code], ... ] ]
+       [ unique file 3, [ [line, code], [line, code], ... ] ]
+      
+    ]
 
 This lets you present it in your views as:
 
