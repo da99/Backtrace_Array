@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.email       = ["i-hate-spam-45671204@mailinator.com"]
   s.homepage    = "https://github.com/da99/Backtrace_Array"
   s.summary     = %q{
-    Turn backtrace String or Array into an Array for presentation.
+    Turn backtrace String or Array into a specially made Array for your views.
   }
   s.description = %q{
     Check the homepage because I can't describe it probably here.
