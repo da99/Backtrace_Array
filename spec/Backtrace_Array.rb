@@ -61,3 +61,14 @@ file2:4:in >main
   
 end # === Backtrace_Array array
 
+
+describe "Backtrace_Array non-backtrace lines" do
+  
+  it "treats line as a file with no other content" do
+    Backtrace_Array(File.read('spec/file/thin_A.log'))
+    .last
+    .should == [ ">> Using rack adapter", [] ]
+  end
+  
+end # === Backtrace_Array non-standard lines
+

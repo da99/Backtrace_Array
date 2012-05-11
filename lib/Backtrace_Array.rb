@@ -14,14 +14,15 @@ def Backtrace_Array str_or_array
     file = pieces.shift
     num  = pieces.shift
     (num = Integer num) if num
-    code = pieces.join(':')
+    code = pieces.join(':') unless pieces.empty?
 
     if last_file != file
       final << [ file, [] ]
       last_file = file
     end
 
-    final.last.last << [num, code]
+    content_arr = [num, code].compact
+    (final.last.last << content_arr) unless content_arr.empty?
   }
 
   final
