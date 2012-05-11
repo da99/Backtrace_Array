@@ -9,8 +9,12 @@ Gem::Specification.new do |s|
   s.authors     = ["da99"]
   s.email       = ["i-hate-spam-45671204@mailinator.com"]
   s.homepage    = "https://github.com/da99/Backtrace_Array"
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{
+    Turn backtrace String or Array into an Array for presentation.
+  }
+  s.description = %q{
+    Check the homepage because I can't describe it probably here.
+  }
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")

@@ -2,7 +2,36 @@
 Backtrace\_Array
 ================
 
-A Ruby gem.
+A Ruby gem to alter structure of a backtrace:
+
+   Original Backtrace:
+
+   [ String, String, String ]
+
+   New Array:
+
+   [
+     [ unique file 1, [ [line, code], [line, code], ... ] ]
+     [ unique file 2, [ [line, code], [line, code], ... ] ]
+     [ unique file 3, [ [line, code], [line, code], ... ] ]
+    
+   ]
+
+This lets you present it in your views as:
+
+<p>
+  <pre>
+  <b style="color: purple;">unique file 1</b>
+  <b>line</b>: code
+  <b>line</b>: code
+  <b>line</b>: code
+
+  <b style="color: purple;">unique file 2</b>
+  <b>line</b>: code
+  <b>line</b>: code
+  <b>line</b>: code
+  </pre>
+</p>
 
 Installation
 ------------
@@ -14,7 +43,18 @@ Usage
 
     require "Backtrace_Array"
     
-    Backtrace_Array
+    begin
+      raise
+    rescue Object => e
+      Backtrace_Array $?.backtrace
+    end
+
+    # or ...
+    Backtrace_Array %~
+      file1:1: in `new'
+      file2:2: in `<main>'
+      file3:3: in `eval'
+    ~
 
 
 Run Tests
