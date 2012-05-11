@@ -43,13 +43,10 @@ Usage
 
     require "Backtrace_Array"
     
-    begin
-      raise
-    rescue Object => e
-      Backtrace_Array $?.backtrace
-    end
+    # Pass it an Array
+    Backtrace_Array my_exception.backtrace
 
-    # or ...
+    # ... or a String
     Backtrace_Array %~
       file1:1: in `new'
       file2:2: in `<main>'
