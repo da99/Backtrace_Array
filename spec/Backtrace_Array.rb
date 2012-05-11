@@ -69,6 +69,18 @@ describe "Backtrace_Array non-backtrace lines" do
     .last
     .should == [ ">> Using rack adapter", [] ]
   end
+
+  it "uses the first :\d+: as the line number, ignoring all others" do
+    Backtrace_Array(%~
+      file1:1:in:1:a
+      file2:2:in:2:a
+                    ~)
+    .should == [
+      ['file1', [ [1, "in:1:a"] ] ],
+      ['file2', [ [2, "in:2:a"] ] ]
+    ]
+  end
   
 end # === Backtrace_Array non-standard lines
+
 
